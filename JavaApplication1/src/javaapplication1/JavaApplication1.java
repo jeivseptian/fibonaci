@@ -18,21 +18,20 @@ public class JavaApplication1 {
     public static void main(String[] args) {
         // TODO code application logic here
        
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Input : ");
-        int a = scan.nextInt();
-        long fibonaci[] = new long[a];
-           System.out.println("Output : ");
-        fibonaci[0] = 0;
-        fibonaci[1] = 1;
-         
-        for(int i = 2; i < a; i++) {
-            fibonaci[i] = fibonaci[i-1] + fibonaci[i-2];
-        }
-         
-        for (int i = 0; i < a; i++) {
-            System.out.println(fibonaci[i] +  " ");
-        }
+         int maxNumber = 0; 
+		 int previousNumber = 1;
+		 int nextNumber = 1;
+		 
+		System.out.print("Masukkan angka = ");
+	        Scanner scanner = new Scanner(System.in);
+	        maxNumber = scanner.nextInt();
+	        for (int i = 1; i <= maxNumber; ++i)
+	        {
+	            System.out.print(previousNumber+" ");	      
+	            int sum = previousNumber + nextNumber;
+	            previousNumber = nextNumber;
+	            nextNumber = sum;
+	        }
     }
  
 }
